@@ -16,11 +16,15 @@ function tf_add_fixed(options) {
 	jQuery(options.whats_scroll).scroll(function(){
 		
 		
-		var equator_line =jQuery(options.position_start).offset().top;
+		var equator_line =jQuery(options.elemet_start).offset().top;
+		
+		
 		if(options.equator_line == 'bottom'){
-		var bottom = jQuery(options.position_start).height();
+		var bottom = jQuery(options.elemet_start).height();
 		equator_line = equator_line + bottom;
 		}
+		
+		
 		else if (options.equator_line !== undefined &&  !isNaN( options.equator_line ) && options.equator_line) {
 			equator_line = options.equator_line;
 		}
@@ -30,8 +34,8 @@ function tf_add_fixed(options) {
 			_add_fixed_is_start= true;
 		}
                 
-                if (options.position_start < 0) {
-                    options.position_start = 0;
+                if (options.elemet_start < 0) {
+                    options.elemet_start = 0;
                 }
                 if (jQuery(this).scrollTop() <=  equator_line)
                 {
@@ -51,7 +55,7 @@ jQuery(document).ready(function(){
 (function($){
 var options = {
     'whats_scroll':$(document),
-    'position_start':".top_menu",
+    'elemet_start':".top_menu",
     'equator_line':'bottom',
     'f_start':function(options){
 	       
