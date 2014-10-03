@@ -1,3 +1,10 @@
+ /** 
+ *  Плагин который отлавливает прокрутку колеса мышки над елементом
+ *
+ *
+ */ 
+  
+  
     jQuery.fn.onWeel = function(callback){
 
         var onWeelCall = function(el,callbackAfterWeel){
